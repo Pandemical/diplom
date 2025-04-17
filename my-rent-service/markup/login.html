@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Вход в систему</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            height: 100vh;
+            overflow: hidden;
+        }
+        
+        /* Левый блок (форма) */
+        .form-container {
+            width: 50%;
+            display: flex;
+            flex-flow: column;
+            align-items: center;
+            justify-content: center;
+            padding: 40px;
+            box-sizing: border-box;
+        }
+        
+        /* Правый блок (зелёный градиент) */
+        .gradient-block {
+            width: 50%;
+            display: flex;
+            flex-flow: column;
+            align-items: center;
+            justify-content: center;
+            background-image: linear-gradient(0deg, #059b82, #16c98c 33.8542%, #16ca8c 52.6042%, #059b82);
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+        
+        /* Стили формы */
+        h2 {
+            text-align: center;
+            margin-bottom: 30px;
+            color: #333;
+            font-size: 28px;
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+            width: 100%;
+            max-width: 350px;
+        }
+        
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+            color: #555;
+            font-size: 14px;
+        }
+        
+        input {
+            width: 100%;
+            padding: 14px;
+            border: 1px solid #ddd;
+            border-radius: 6px;
+            box-sizing: border-box;
+            font-size: 16px;
+            transition: border-color 0.3s;
+        }
+        
+        input:focus {
+            border-color: #16c98c;
+            outline: none;
+            box-shadow: 0 0 0 2px rgba(22, 201, 140, 0.2);
+        }
+        
+        button {
+            width: 100%;
+            padding: 14px;
+            background-color: #16c98c;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: bold;
+            transition: background-color 0.3s;
+            margin-top: 10px;
+        }
+        
+        button:hover {
+            background-color: #059b82;
+        }
+        
+        .signup-link {
+            text-align: center;
+            margin-top: 20px;
+            color: #666;
+            font-size: 14px;
+        }
+        
+        .signup-link a {
+            color: #16c98c;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        
+        /* Адаптивность */
+        @media (max-width: 768px) {
+            .gradient-block {
+                display: none;
+            }
+            .form-container {
+                width: 100%;
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Левая часть - форма -->
+    <div class="form-container">
+        <h2>Вход в систему</h2>
+        <form action="/login" method="POST">
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" required placeholder="example@mail.com">
+            </div>
+            <div class="form-group">
+                <label for="password">Пароль</label>
+                <input type="password" id="password" name="password" required placeholder="Введите ваш пароль">
+            </div>
+            <button type="submit">Войти</button>
+        </form>
+        <div class="signup-link">
+            Нет аккаунта? <a href="signup.html">Зарегистрироваться</a>
+        </div>
+    </div>
+    
+    <!-- Правая часть - градиентный блок -->
+    <div class="gradient-block">
+        <h2>С возвращением!</h2>
+        <p>Войдите в свой аккаунт, чтобы продолжить работу.</p>
+    </div>
+</body>
+</html>

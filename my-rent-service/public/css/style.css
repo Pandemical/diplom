@@ -1,0 +1,555 @@
+body{
+    margin: 0px;
+}
+
+p{
+    margin: 0;
+}
+
+.d-flex{
+    display: flex;
+}
+
+.container{
+    width: 100%, 1920px;
+    display: flex;
+    margin: 0px 270px;
+    justify-content: space-between;
+    flex-grow: 1;
+}
+
+.header{
+    width: 1920px;
+    height: 60px;
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 20px 20px 50px;
+    align-items: center;
+
+    /*Закреп шапки*/
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    background: #ffffff;
+}
+
+.header-logo{
+    margin-top: 10px;
+}
+
+.menu-list ul{
+    display: flex;
+    list-style: none;
+}
+
+.menu-list a {
+    margin-right: 50px;
+    text-decoration: none;  
+    color: #7F8FA4;
+}
+
+.menu-list a:hover{
+    font-weight: bold;
+    color: #000000;
+}
+
+.header-right{
+    display: flex;
+    /* justify-content: right; */
+    /* align-items: center; */
+}
+
+.header-account{
+    margin-left: 35px;
+}
+
+.header-notification{
+    width: 50px;
+    height: 50px;
+    border-radius: 25px;
+    background-color: #F5F7FA;
+    margin-left: 30px;
+}
+
+.header-notification img{
+    margin-top: 12.5px;
+    margin-left: 12.5px;
+}
+
+.header-settings{
+    width: 50px;
+    height: 50px;
+    border-radius: 25px;
+    background-color: #F5F7FA;
+    margin-left: 30px;
+}
+
+.header-settings img{
+    margin-top: 12.5px;
+    margin-left: 12.5px;
+}
+
+main{
+    margin-top: 90px;
+}
+
+.menu{
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+
+.menu li a{
+    text-decoration: none;
+    color: #B1B1B1;
+}
+
+.content{
+    width: 100%;
+    padding: 40px 40px 40px 40px;
+    background-color: #EFF0F2;
+}
+
+.container-content{
+    /* display: flex; */
+    margin: 0px 270px;
+    justify-content: space-between;
+}
+
+.menu li img{
+    margin-right: 26px;
+}
+
+/*dashboard*/
+
+.my-cards{
+    display: flex;
+    justify-content: space-between;
+}
+
+.cards{
+    width: 1190px;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.card:nth-child(1), .card:nth-child(2), .card:nth-child(3){
+    width: 350px;
+    height: 225px;
+    border: 0px;
+    border-radius: 25px;
+    background: linear-gradient(#2D60FF,#539BFF);
+}
+
+.card:nth-child(2){
+    background: linear-gradient(#4C49ED,#0A06F4);
+}
+
+.card:nth-child(3){
+    background: linear-gradient(#5900ff,#58018b);
+}
+
+.balance{
+    display: flex;
+    justify-content: space-between;
+}
+
+.balance img{
+    width: 34px;
+    height: 34px;
+
+}
+
+.balance , .card-holder , .num-card{
+    color: #FFFFFF;
+    margin: 25px  20px 25px 20px;
+}
+
+.num-card{
+    margin-top: 40px;
+}
+
+.num-card, .card-holder{ 
+    display: flex;
+    justify-content: space-between;
+    margin-right: 25px;
+}
+
+.num-card img{
+    width: 44px;
+    height: 30px;
+}
+
+.add-new-card{
+    width: 50%;
+    height: 380px;
+    padding: 30px;
+    border-radius: 25px;
+    background-color: #FFFFFF;
+}
+
+.add-new-card button{
+    width: 160px;
+    height: 50px;
+    border: none;
+    border-radius: 9px;
+    color: #FFFFFF;
+    background-color: #1814F3;
+    cursor: pointer;
+}
+
+.text-area{
+    color: #718EBF;
+}
+
+.new-card{
+    margin-top: 30px;
+    display: flex;
+    justify-content: space-between;
+}
+.new-card input{
+    width: 290px;
+    height: 50px;
+    padding-left: 30px;
+    margin-top: 20px;
+    margin-bottom: 30px;
+    border: 1px solid #bbc5cc;
+    border-radius: 15px;
+}
+
+.card-list{
+    width: 900px;
+    padding: 30px 30px 30px 30px;
+}
+
+.card-list p{
+    padding: 10px;
+}
+
+.item-card{
+    width: 730px;
+    display: flex;
+    padding: 20px 30px 30px 20px;
+    margin-bottom: 20px;
+    border-radius: 20px;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #FFFFFF;
+}
+
+.background-logo{
+    width: 35px;
+    height: 35px;
+    border-radius: 10px;
+    background-color: #0D47A1;
+}
+
+.background-logo img{
+    width: 23px;
+    height: 23px;
+    padding: 5px;
+}
+
+.money{
+    display: flex;
+    /* justify-content: space-between; */
+}
+
+.money-cards{
+    width: 225px;
+    margin-right: 30px;
+    padding: 10px 15px 15px;
+    display: flex;
+    border-radius: 20px;
+    background-color: #1565C0;
+    align-items: center;
+}
+
+.money-cards p{
+    color: #FFFFFF;
+}
+
+.money-cards img{
+    width: 26px;
+    height: 26px;
+    margin-right: 15px;
+}
+
+.money button{
+    width: 225px;
+    height: 55px;
+    border: 2px dashed rgb(179, 179, 179);
+    border-radius: 20px;
+}
+
+.money button:hover{
+    font-size: larger;
+    border-color: black;
+}
+
+.date-range-container {
+    margin: 20px 0;
+    padding: 15px;
+    background: #f8f9fa;
+    border-radius: 8px;
+}
+
+.date-range-container p {
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+#dateRangePicker {
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    width: 100%;
+    max-width: 300px;
+    cursor: pointer;
+}
+
+.card-info {
+    line-height: 1.4;
+  }
+  
+  .card-name {
+    color: rgb(179, 179, 179);
+    display: block; /* Заменяем <br> */
+  }
+  
+  .card-amount {
+    color: white;
+  }
+
+.content-block{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.block{
+    width: 445px;
+    height: 367px;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    border-radius: 10px;
+    background-color: #FFFFFF;
+}
+
+/* bill.css */
+
+.container-content-bills{
+    display: flex;
+    margin: 0px 270px;
+    justify-content: space-between;
+}
+
+.side-bar{
+    width: 270px;
+    height: 850px;
+    padding: 1.7rem 0;
+    display: flex;
+    flex-direction: column;
+    border-radius: 10px;
+    background-color: #FFFFFF;
+}
+
+.side-bar p{
+    font-size: 24px;
+    font-weight: bold;
+    padding: 0 1.7rem;
+}
+
+.side-bar button:nth-child(2) {
+    width: 225px;
+    height: 37px;
+    margin: 23px;
+    border: none;
+    border-radius: 15px;
+    color: #FFFFFF;
+    background-color: #00aa70;
+    cursor: pointer;
+}
+
+.side-bar input:nth-child(3){
+    width: 225px;
+    height: 38px;
+    margin: 19px;
+    border-radius: 5px;
+}
+
+.side-bar span{
+    margin: 20px 20px 10px 20px
+}
+
+.side-bar select{
+    width: 225px;
+    height: 38px;
+    margin: 0px 20px 0px 20px;
+    border-radius: 5px;
+}
+
+.list-bills{
+    width: 1080px;
+    height: auto;
+}
+
+.item-bill{
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    background-color: #FFFFFF;
+    border-radius: 10px;
+}
+/* transaction */
+
+.category{
+    display: flex;
+    flex-direction: column;
+}
+
+.category button{
+    width: 227px;
+    height: 30px;
+    margin: 0px 20px 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/* Стили аккордеона */
+.subcategories {
+    display: none;
+    padding: 10px 0;
+  }
+  
+  .category.active .subcategories {
+    display: block;
+  }
+  
+  /* Стили чекбоксов */
+  .category-checkbox {
+    display: block;
+    padding: 8px 10px;
+    cursor: pointer;
+  }
+  
+  .category-checkbox:hover {
+    background: #f5f5f5;
+  }
+  
+  .category-checkbox input {
+    margin-right: 10px;
+  }
+  
+  /* Стиль для выбранных чекбоксов */
+  .category-checkbox input:checked + span {
+    color: #4CAF50;
+    font-weight: bold;
+  }
+
+.change-list-transaction{
+    margin-bottom: 30px;
+}
+
+/* analiticks */
+.main-content {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+  }
+
+.income-statement{
+    width: 990px;
+    padding: 35px;
+    margin-left: 20px;
+    background-color: #FFFFFF;
+}
+
+.income-statement h2{
+    margin: 0px;
+}
+
+.sum-income, .sum-expense{
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    border-bottom: 1px solid #abacad;
+    background-color: #EFF0F2;
+}
+
+.income-expense{
+    width: 990px;
+}
+
+.item-expense{
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #abacad;
+}
+
+.item-expense:hover{
+    background-color: #EFF0F2;
+}
+
+
+/* settings */
+.edit-profile{
+    width: 990px;
+    height: auto;
+    padding: 50px;
+    border-radius: 10px;
+    background-color: #FFFFFF;
+}
+
+.img-profile{
+    margin-bottom: 20px;
+}
+
+.input-profile img{
+    width: 130px;
+    height: 130px;
+}
+
+.input-profile{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.input-profile input{
+    width: 418px;
+    height: 60px;
+    margin: 10px 0px 10px 0px;
+    padding-left: 15px;
+    border: 2px solid #DFEAF2;
+    border-radius: 15px;
+}
+
+.save-button button{
+    width: 200px;
+    height: 60px;
+    border: none;
+    border-radius: 15px;
+    background-color: #1814F3;
+}
+
+
+.save-button span{
+    color: #FFFFFF;
+}
+
+/* Стили для всей формы */
+
+input:focus {
+    border-color: #16c98c;
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(22, 201, 140, 0.2);
+}
+
