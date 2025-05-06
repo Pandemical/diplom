@@ -1,9 +1,10 @@
 import {JSX} from 'react'
 import Header from '../../components/header/header';
+import styles from './analiticks-page.module.css';
 
 function AnaliticksPage(): JSX.Element {
     return(
-    <body>
+    <>
             <Header/>
         <main>
             <div className="content">
@@ -28,28 +29,28 @@ function AnaliticksPage(): JSX.Element {
                             </div>
                         </div>
                     </div>
-                    <div className="main-content">
-                        <div className="income-statement">
+                    <div className={styles["main-content"]}>
+                        <div className={styles["income-statement"]}>
                             <h2>Отчет о доходах и расходах</h2>
-                            <div className="income-expense">
-                            <div className="income">
-                                <div className="sum-income"><strong>Суммарные доходы: 0,00 ₽</strong></div>
-                                <div className="list-income">
-                                <div className="item-expense"><div className="background-logo"><img src="image/coins.png" alt=""/></div>Доход: 0,00 ₽</div>
+                            <div className={styles["income-expense"]}>
+                            <div className={styles["income"]}>
+                                <div className={styles["sum-income"]}><strong>Суммарные доходы: 0,00 ₽</strong></div>
+                                <div className={styles["list-income"]}>
+                                <div className={styles["item-expense"]}><div className="background-logo"><img src="image/coins.png" alt=""/></div>Доход: 0,00 ₽</div>
                                 </div>
                             </div>
-                            <div className="expense">
-                                <div className="sum-expense"><strong>Суммарные расходы: 0,00 ₽</strong></div>
-                                <div className="list-expense">
-                                <div className="item-expense"><div className="background-logo"><img src="image/fork-knife.png" alt=""/></div>Еда и напитки 0,00 ₽</div>
-                                <div className="item-expense"><div className="background-logo"><img src="image/shopping-bag.png" alt=""/></div>Покупки: 0,00 ₽</div>
-                                <div className="item-expense"><div className="background-logo"><img src="image/house.png" alt=""/></div>Жилье 0,00 ₽</div>
-                                <div className="item-expense"><div className="background-logo"><img src="image/bus.png" alt=""/></div>Транспорт: 0,00 ₽</div>
-                                <div className="item-expense"><div className="background-logo"><img src="image/entertainment.png" alt=""/></div>Развлечения и досуг 0,00 ₽</div>
-                                <div className="item-expense"><div className="background-logo"><img src="image/pc.png" alt=""/></div>Связь, ПК 0,00 ₽</div>
-                                <div className="item-expense"><div className="background-logo"><img src="image/finance.png" alt=""/></div>Финансовые расходы 0,00 ₽</div>
-                                <div className="item-expense"><div className="background-logo"><img src="image/investment.png" alt=""/></div>Инвестиции 0,00 ₽</div>
-                                <div className="item-expense"><div className="background-logo"><img src="image/line3.png" alt=""/></div>Прочее 0,00 ₽</div>
+                            <div className={styles["expense"]}>
+                                <div className={styles["sum-expense"]}><strong>Суммарные расходы: 0,00 ₽</strong></div>
+                                <div className={styles["list-expense"]}>
+                                <div className={styles["item-expense"]}><div className="background-logo"><img src="image/fork-knife.png" alt=""/></div>Еда и напитки 0,00 ₽</div>
+                                <div className={styles["item-expense"]}><div className="background-logo"><img src="image/shopping-bag.png" alt=""/></div>Покупки: 0,00 ₽</div>
+                                <div className={styles["item-expense"]}><div className="background-logo"><img src="image/house.png" alt=""/></div>Жилье 0,00 ₽</div>
+                                <div className={styles["item-expense"]}><div className="background-logo"><img src="image/bus.png" alt=""/></div>Транспорт: 0,00 ₽</div>
+                                <div className={styles["item-expense"]}><div className="background-logo"><img src="image/entertainment.png" alt=""/></div>Развлечения и досуг 0,00 ₽</div>
+                                <div className={styles["item-expense"]}><div className="background-logo"><img src="image/pc.png" alt=""/></div>Связь, ПК 0,00 ₽</div>
+                                <div className={styles["item-expense"]}><div className="background-logo"><img src="image/finance.png" alt=""/></div>Финансовые расходы 0,00 ₽</div>
+                                <div className={styles["item-expense"]}><div className="background-logo"><img src="image/investment.png" alt=""/></div>Инвестиции 0,00 ₽</div>
+                                <div className={styles["item-expense"]}><div className="background-logo"><img src="image/line3.png" alt=""/></div>Прочее 0,00 ₽</div>
                                 </div>
                             </div>
                             </div>
@@ -58,7 +59,7 @@ function AnaliticksPage(): JSX.Element {
                 </div>
             </div>
         </main>
-    </body>
+    </>
     )
 }
 

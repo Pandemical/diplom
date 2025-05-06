@@ -1,9 +1,11 @@
 import {JSX} from 'react';
 import Header from '../../components/header/header';
+import LogoutButton from '../../components/logout-button/logout-button';
 
+import styles from './settings-page.module.css'
 function SettingsPage(): JSX.Element{
     return(
-        <body>
+        <>
             <Header/>   
             <main>
                 <div className="content">
@@ -14,37 +16,39 @@ function SettingsPage(): JSX.Element{
                             <a href="" >Безопастность</a>
                         </div>
                         <div className="main-content">
-                            <div className="edit-profile">
+                            <div className={styles["edit-profile"]}>
                                 <div className="img-profile">
                                     <a href=""><img src="image/imgprofile.png" alt="imgprofile"/></a>
                                 </div>
-                                <div className="input-profile">
-                                    <div className="first-name">
+                                <div className={styles["input-profile"]}>
+                                    <div className={styles["first-name"]}>
                                         <p>Ваше Имя</p>
                                         <input type="text" placeholder="Иван"/>
                                     </div>
-                                    <div className="last-name">
+                                    <div className={styles["last-name"]}>
                                         <p>Ваша Фамилия</p>
                                         <input type="text" placeholder="Иванов"/>
                                     </div>
-                                    <div className="sur-name">
+                                    <div className={styles["sur-name"]}>
                                         <p>Ваше Отчество</p>
                                         <input type="text" placeholder="Иванович"/>
                                     </div>
-                                    <div className="email">
+                                    <div className={styles["email"]}>
                                         <p>Ваша Почта</p>
                                         <input type="text" placeholder="example@.ru"/>
                                     </div>
-                                    <div className="save-button">
+                                    <div className={styles["save-button"]}>
                                         <button><span>Сохранить</span></button>
                                     </div>
                                 </div>
+                                <LogoutButton/>
                             </div>
+
                         </div>
                     </div>
                 </div>
             </main>
-        </body>
+        </>
     )
 }
 

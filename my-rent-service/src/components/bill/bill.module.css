@@ -1,0 +1,8 @@
+.item-bill{
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    background-color: #FFFFFF;
+    border-radius: 10px;
+}

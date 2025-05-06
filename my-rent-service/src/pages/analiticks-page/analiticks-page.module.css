@@ -1,0 +1,40 @@
+.main-content {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+  }
+
+.income-statement{
+    width: 990px;
+    padding: 35px;
+    margin-left: 20px;
+    background-color: #FFFFFF;
+}
+
+.income-statement h2{
+    margin: 0px;
+}
+
+.sum-income, .sum-expense{
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    border-bottom: 1px solid #abacad;
+    background-color: #EFF0F2;
+}
+
+.income-expense{
+    width: 920px;
+}
+
+.item-expense{
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #abacad;
+}
+
+.item-expense:hover{
+    background-color: #EFF0F2;
+}

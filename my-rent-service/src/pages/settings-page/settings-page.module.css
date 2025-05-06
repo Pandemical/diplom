@@ -1,0 +1,44 @@
+.edit-profile{
+    width: 990px;
+    height: auto;
+    padding: 50px;
+    border-radius: 10px;
+    background-color: #FFFFFF;
+}
+
+.img-profile{
+    margin-bottom: 20px;
+}
+
+.input-profile img{
+    width: 130px;
+    height: 130px;
+}
+
+.input-profile{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.input-profile input{
+    width: 418px;
+    height: 60px;
+    margin: 10px 0px 10px 0px;
+    padding-left: 15px;
+    border: 2px solid #DFEAF2;
+    border-radius: 15px;
+}
+
+.save-button button{
+    width: 200px;
+    height: 60px;
+    border: none;
+    border-radius: 15px;
+    background-color: #1814F3;
+}
+
+
+.save-button span{
+    color: #FFFFFF;
+}

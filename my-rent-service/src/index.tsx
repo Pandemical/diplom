@@ -2,6 +2,8 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import App from './components/app/app'
 
+import { MantineProvider } from '@mantine/core';
+import {theme} from './theme'
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
@@ -9,6 +11,8 @@ const root = ReactDOM.createRoot(
 
 root.render(
   <React.StrictMode>
-    <App/>
+    <MantineProvider theme={theme}>
+      <App/>
+    </MantineProvider>
   </React.StrictMode>
 )
