@@ -3,16 +3,16 @@ import { createTheme } from '@mantine/core';
 export const theme = createTheme({
   colors: {
     deepBlue: [
-      '#eef3ff',
-      '#dce4f5',
-      '#b9c7e2',
-      '#94a8d0',
-      '#748dc1',
-      '#5f7cb8',
-      '#5474b4',
-      '#44639f',
-      '#39588f',
-      '#2d4b81',
+      "#ebfff1",
+      "#d4fee2",
+      "#a4fdc1",
+      "#72fd9d",
+      "#4efd80",
+      "#3dfd6d",
+      "#34fe63",
+      "#29e252",
+      "#1dc948",
+      "#00571d",
     ],
   },
   components: {

@@ -1,4 +1,4 @@
-.item-bill{
+.item-transaction{
     padding: 20px;
     display: flex;
     justify-content: space-between;
@@ -7,11 +7,21 @@
     border-radius: 10px;
 }
 
-.background-logo{
+.background-category{
     width: 35px;
     height: 35px;
     display: flex;
     justify-content: space-around;
     align-items: center;
     border-radius: 10px;
+}
+
+.amountExpense {
+  color: #FE3B2C;
+  font-weight: bold;
+}
+
+.amountIncome {
+  color: #21CB87;
+  font-weight: bold;
 }

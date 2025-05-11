@@ -240,12 +240,12 @@ main{
     background-color: #FFFFFF;
 }
 
-.background-logo{
+/* .background-logo{
     width: 35px;
     height: 35px;
     border-radius: 10px;
     background-color: #0D47A1;
-}
+} */
 
 .background-logo img{
     width: 23px;
@@ -312,7 +312,7 @@ main{
     justify-content: space-between;
 }
 
-.side-bar{
+/* .side-bar{
     width: 270px;
     height: 850px;
     padding: 1.7rem 0;
@@ -355,7 +355,7 @@ main{
     height: 38px;
     margin: 0px 20px 0px 20px;
     border-radius: 5px;
-}
+} */
 
 .list-bills{
     width: 1050px;

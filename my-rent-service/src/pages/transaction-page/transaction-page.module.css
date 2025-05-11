@@ -1,0 +1,128 @@
+/* Основные стили контейнера */
+.actionsContainer {
+  margin-bottom: 1.5rem;
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+/* Базовый стиль кнопок */
+.actionButton {
+  padding: 8px 18px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 500;
+  font-size: 14px;
+  transition: all 0.2s ease;
+  border: 2px solid transparent;
+}
+
+/* Основная зеленая кнопка */
+.selectAllButton {
+  background-color: #00AA70;
+  color: white;
+}
+
+.selectAllButton:hover {
+  background-color: #008D5E;
+  transform: translateY(-1px);
+}
+
+.selectAllButton:active {
+  background-color: #007750;
+}
+
+/* Кнопка сброса */
+.clearSelectionButton {
+  background-color: white;
+  color: #00AA70;
+  border-color: #00AA70;
+}
+
+.clearSelectionButton:hover {
+  background-color: #F0FAF6;
+  transform: translateY(-1px);
+}
+
+.clearSelectionButton:active {
+  background-color: #E0F5EC;
+}
+
+/* Кнопка удаления */
+.deleteSelectedButton {
+  background-color: #FF4444;
+  color: white;
+}
+
+.deleteSelectedButton:hover {
+  background-color: #E03E3E;
+  transform: translateY(-1px);
+}
+
+.deleteSelectedButton:active {
+  background-color: #C23838;
+}
+
+.deleteSelectedButton:disabled {
+  background-color: #E0E0E0;
+  color: #A0A0A0;
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* Эффекты при наведении для всех кнопок */
+.actionButton:hover {
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Иконки (если будут добавлены) */
+.buttonIcon {
+  margin-right: 6px;
+  vertical-align: middle;
+}
+
+.side-bar{
+    width: 270px;
+    height: 850px;
+    padding: 1.7rem 0;
+    display: flex;
+    flex-direction: column;
+    border-radius: 10px;
+    background-color: #FFFFFF;
+}
+
+.side-bar p{
+    font-size: 24px;
+    font-weight: bold;
+    padding: 0 1.7rem;
+}
+
+.side-bar button:nth-child(2) {
+    width: 225px;
+    height: 37px;
+    margin: 23px;
+    border: none;
+    border-radius: 15px;
+    color: #FFFFFF;
+    background-color: #00aa70;
+    cursor: pointer;
+}
+
+.side-bar input:nth-child(3){
+    width: 225px;
+    height: 38px;
+    margin: 19px;
+    border-radius: 5px;
+}
+
+.side-bar span{
+    margin: 20px 20px 10px 20px
+}
+
+.side-bar select{
+    width: 225px;
+    height: 38px;
+    margin: 0px 20px 0px 20px;
+    border-radius: 5px;
+}

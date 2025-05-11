@@ -5,17 +5,26 @@ import AddBillModal from "../../components/addBillModal/addBillModal";
 import { DonutChart, LineChart } from "@mantine/charts";
 import { MonthPickerInput } from "@mantine/dates";
 import { Bill } from "../../types/bill";
+import { Transaction } from "../../types/transaction";
 import { createBill, fetchBill } from "../../api/billApi";
+import { fetchTransaction } from "../../api/transactionApi";
+import { getDonutDataFromTransactions } from "../../utils/getDonutDataFromTransactions";
+import { getIncomeExpenseChartData } from "../../utils/getIncomeExpenseChartData";
+import TransactionCard from "../../components/transaction-card/transaction-card";
+
 
 import '@mantine/core/styles.css';
 import "@mantine/charts/styles.css";
 import "@mantine/dates/styles.css";
 import styles from './main-page.module.css';
-import { data, data2 } from "../../const";
 
 function MainPage(): JSX.Element {
   const [modalOpened, setModalOpened] = useState(false);
   const [cards, setCards] = useState<Bill[]>([]);
+  const [transactions, setTransactions] = useState<Transaction[]>([]);
+
+  const donutData = getDonutDataFromTransactions(transactions);
+  const incomeExpenseData = getIncomeExpenseChartData(transactions);
 
   const handleAddBill = async (bill: Omit<Bill, 'id'>) => {
     try {
@@ -30,19 +39,22 @@ function MainPage(): JSX.Element {
     } catch (error) {
       console.error("Ошибка при создании счёта:", error);
     }
-  };;
-  
+  };
 
   useEffect(() => {
-    const loadBills = async () => {
+    const loadData = async () => {
       try {
-        const bills = await fetchBill();
+        const [bills, txs] = await Promise.all([
+          fetchBill(),
+          fetchTransaction()
+        ]);
         setCards(bills);
+        setTransactions(txs);
       } catch (error) {
-        console.error("Ошибка загрузки счетов:", error);
+        console.error("Ошибка загрузки данных:", error);
       }
     };
-    loadBills();
+    loadData();
   }, []);
 
   return (
@@ -57,74 +69,68 @@ function MainPage(): JSX.Element {
                 {cards.map((bill) => (
                   <MoneyCard key={bill.id} bill={bill} />
                 ))}
-                <button className="add-money" onClick={() => setModalOpened(true)}>+ Добавить счёт</button>
+                {cards.length < 5 && (
+                  <button className="add-money" onClick={() => setModalOpened(true)}>+ Добавить счёт</button>
+                )}
               </div>
             </div>
 
             <div className="MonthPicker">
               <MonthPickerInput placeholder="Выберите месяц" label="Период" />
             </div>
-
             <div className={styles["content-block"]}>
               <div className={styles.block}>
-                <div className="block-name">
+                <div className={styles["block-name"]}>
                   <span>Структура расходов</span>
                 </div>
-                <span>В этом месяце</span>
-                <span>-200,00 ₽</span>
+                <span>В этом месяце: </span>
+                <span>-{donutData.reduce((sum, item) => sum + item.value, 0)} ₽</span>
                 <div className={styles["chart-container"]}>
-                  <DonutChart data={data} />
+                  <DonutChart data={donutData} />
                 </div>
               </div>
 
               <div className={styles.block}>
-                <div className="block-name">
-                  <span>Последние транзакции</span>
-                </div>
-                <span>Перевести, снять</span>
-                <span>Еда напитки</span>
-                <span>Транспорт</span>
-                <span>Интернет</span>
-              </div>
-
-              <div className={styles.block}>
-                <div className="block-name">
-                  <span>Обзор</span>
-                </div>
-                <span>Наличные</span>
-                <span>Наличные</span>
-                <div>Карты</div>
-              </div>
-
-              <div className={styles.block}>
-                <div className="block-name">
-                  <span>Движение денежных средств</span>
-                </div>
-                <span>В этом месяце</span>
-                <span>Доход карта</span>
-                <div>Расход</div>
-              </div>
-
-              <div className={styles.block}>
-                <div className="block-name">
+                <div className={styles["block-name"]}>
                   <span>Сравнение по периодам</span>
                 </div>
-                <div className="Area-chart">
+                <div className={styles["Area-chart"]}>
                   <LineChart
-                    data={data2}
+                    data={incomeExpenseData}
                     dataKey="date"
                     series={[
-                      { name: 'Apples', color: 'indigo.6' },
-                      { name: 'Oranges', color: 'blue.6' },
-                      { name: 'Tomatoes', color: 'teal.6' },
+                      { name: "Доход", color: "green.6" },
+                      { name: "Расход", color: "red.6" },
                     ]}
                   />
                 </div>
               </div>
-
               <div className={styles.block}>
-                <div className="block-name">
-                  <span>Структура расходов</span>
+                <div className={styles["block-name"]}>
+                  <span>Последние транзакции</span>
+                </div>
+                <div className={styles["transaction-list"]}>
+                  {transactions
+                    .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())
+                    .slice(0, 4)
+                    .map((transaction) => (
+                      <TransactionCard key={transaction.id} transaction={transaction} showCheckbox={false} showDate={false} className={styles["transaction-dashboard"]}/>
+                    ))}
+                </div>
+              </div>
+              <div className={styles.block}>
+                <div className={styles["block-name"]}>
+                  <span>Счета</span>
+                </div>
+              </div>
+              <div className={styles.block}>
+                <div className={styles["block-name"]}>
+                  <span>Тенденция баланса</span>
+                </div>
+              </div>
+              <div className={styles.block}>
+                <div className={styles["block-name"]}>
+                  <span>Сравнение по периодам</span>
                 </div>
               </div>
             </div>

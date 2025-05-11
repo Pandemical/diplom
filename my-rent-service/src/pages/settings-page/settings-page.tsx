@@ -10,8 +10,8 @@ function SettingsPage(): JSX.Element{
             <main>
                 <div className="content">
                     <div className="container-content-bills">
-                        <div className="side-bar">
-                            <span>Настройки</span>
+                        <div className={styles["side-bar"]}>
+                            <p>Настройки</p>
                             <a href="" >Редакировать аккаунт</a>
                             <a href="" >Безопастность</a>
                         </div>

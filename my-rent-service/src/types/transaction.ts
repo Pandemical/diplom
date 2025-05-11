@@ -1,11 +1,23 @@
-export type TransactionCard = {
-    id: string;
-    title: string;
-    titleCard: string;
-    cardId: number;
-    type: string;
-    sum: number;
-    date: string;
-    imageicon: string; // поставить дефолтное значение
-    backroungcolor: string; // поставить дефолтное значение 
+export type Transaction = {
+    id: number;
+    amount: number;
+    date: Date;
+    billId: number;
+    categoryId: number;
+    category_transaction: TransactionCategory;
+    bill: Billtransaction;
+}
+
+type TransactionCategory = {
+    id: number,
+    name: string,
+    img: string,
+    color: string,
+    type: string,
+}
+
+type Billtransaction = {
+    id: number,
+    title: string,
+    userId: number
 }

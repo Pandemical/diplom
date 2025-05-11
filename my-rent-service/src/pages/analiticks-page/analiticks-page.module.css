@@ -1,6 +1,5 @@
 .main-content {
     display: flex;
-    justify-content: center;
     width: 100%;
   }
 
@@ -9,6 +8,7 @@
     padding: 35px;
     margin-left: 20px;
     background-color: #FFFFFF;
+    border-radius: 10px;
 }
 
 .income-statement h2{
@@ -21,6 +21,7 @@
     justify-content: center;
     border-bottom: 1px solid #abacad;
     background-color: #EFF0F2;
+    align-items: center;
 }
 
 .income-expense{
@@ -37,4 +38,60 @@
 
 .item-expense:hover{
     background-color: #EFF0F2;
+}
+
+.background-category{
+    width: 35px;
+    height: 35px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    border-radius: 10px;
+}
+
+.side-bar{
+    box-sizing: border-box;
+    width: 270px;
+    min-width: 270px;
+    height: 850px;
+    padding: 1.7rem 0;
+    display: flex;
+    flex-direction: column;
+    border-radius: 10px;
+    background-color: #FFFFFF;
+}
+
+.side-bar p{
+    font-size: 24px;
+    font-weight: bold;
+    padding: 0 1.7rem;
+}
+
+.side-bar button:nth-child(2) {
+    width: 225px;
+    height: 37px;
+    margin: 23px;
+    border: none;
+    border-radius: 15px;
+    color: #FFFFFF;
+    background-color: #00aa70;
+    cursor: pointer;
+}
+
+.side-bar input:nth-child(3){
+    width: 225px;
+    height: 38px;
+    margin: 19px;
+    border-radius: 5px;
+}
+
+.side-bar span{
+    margin: 20px 20px 10px 20px
+}
+
+.side-bar select{
+    width: 225px;
+    height: 38px;
+    margin: 0px 20px 0px 20px;
+    border-radius: 5px;
 }
