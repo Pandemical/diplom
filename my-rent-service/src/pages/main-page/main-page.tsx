@@ -11,6 +11,9 @@ import { fetchTransaction } from "../../api/transactionApi";
 import { getDonutDataFromTransactions } from "../../utils/getDonutDataFromTransactions";
 import { getIncomeExpenseChartData } from "../../utils/getIncomeExpenseChartData";
 import TransactionCard from "../../components/transaction-card/transaction-card";
+import BillCard from "../../components/bill/bill";
+import { Text } from "@mantine/core";
+
 
 
 import '@mantine/core/styles.css';
@@ -25,6 +28,19 @@ function MainPage(): JSX.Element {
 
   const donutData = getDonutDataFromTransactions(transactions);
   const incomeExpenseData = getIncomeExpenseChartData(transactions);
+    // Общий баланс
+  const totalBalance = cards.reduce((sum, bill) => sum + bill.amount, 0);
+
+  // Оборот: сумма всех доходов и расходов
+  const turnover = transactions.reduce((sum, tx) => sum + Math.abs(tx.amount), 0);
+
+  // Расходы (отрицательные значения)
+  const totalExpenses = transactions
+    .filter((tx) => tx.category_transaction.type === "expense")
+    .reduce((sum, tx) => sum + tx.amount, 0);
+
+
+
 
   const handleAddBill = async (bill: Omit<Bill, 'id'>) => {
     try {
@@ -89,20 +105,14 @@ function MainPage(): JSX.Element {
                   <DonutChart data={donutData} />
                 </div>
               </div>
-
               <div className={styles.block}>
                 <div className={styles["block-name"]}>
-                  <span>Сравнение по периодам</span>
+                  <span>Тенденция баланса</span>
                 </div>
-                <div className={styles["Area-chart"]}>
-                  <LineChart
-                    data={incomeExpenseData}
-                    dataKey="date"
-                    series={[
-                      { name: "Доход", color: "green.6" },
-                      { name: "Расход", color: "red.6" },
-                    ]}
-                  />
+                <div className={styles["balance-trend"]}>
+                  <p><strong>Общий баланс:</strong> <Text span fw={700} c="yellow" >{totalBalance} ₽</Text> </p>
+                  <p><strong>Оборот:</strong> <Text span fw={700} c={turnover >= 0 ? 'green' : 'red'}>{turnover} ₽</Text> </p>
+                  <p><strong>Расходы:</strong> <Text span fw={700} c="red">{totalExpenses} ₽</Text></p>
                 </div>
               </div>
               <div className={styles.block}>
@@ -122,15 +132,46 @@ function MainPage(): JSX.Element {
                 <div className={styles["block-name"]}>
                   <span>Счета</span>
                 </div>
-              </div>
-              <div className={styles.block}>
-                <div className={styles["block-name"]}>
-                  <span>Тенденция баланса</span>
+                <div className={styles["bill-list"]}>
+                  {cards
+                    .slice(-4)
+                    .reverse()
+                    .map((bill) => (
+                      <BillCard
+                        key={bill.id}
+                        bill={bill}
+                        showMenu={false} 
+                        className={styles["bill-dashboard"]} 
+                      />
+                    ))}
                 </div>
               </div>
               <div className={styles.block}>
                 <div className={styles["block-name"]}>
                   <span>Сравнение по периодам</span>
+                </div>
+                <div className={styles["Area-chart"]}>
+                  <LineChart
+                    data={incomeExpenseData}
+                    dataKey="date"
+                    series={[
+                      { name: "Доход", color: "green.6" },
+                      { name: "Расход", color: "red.6" },
+                    ]}
+                    xAxisProps={{
+                      tickFormatter: (value) =>
+                        new Date(value).toLocaleDateString("ru-RU", {
+                          day: "2-digit",
+                          month: "short",
+                        }),
+                    }}
+                  />
+
+                </div>
+              </div>            
+              <div className={styles.block}>
+                <div className={styles["block-name"]}>
+                  <span>Совет по оптимизации расходов</span>
                 </div>
               </div>
             </div>

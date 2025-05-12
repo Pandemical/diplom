@@ -8,23 +8,25 @@ import { deleteBill } from '../../api/billApi';
 
 interface BillProps {
   bill: Bill;
-  onDelete: (id: number) => void; // 👈 новый пропс
+  onDelete?: (id: number) => void; // 👈 новый пропс
+  showMenu?: boolean; // 👈 новый пропс
+  className?: string;
 }
 
-function BillCard({ bill, onDelete }: BillProps): JSX.Element {
+function BillCard({ bill, onDelete, className,showMenu }: BillProps): JSX.Element {
   const icon = iconMap[bill.type_bill?.name || "default"];
 
   const handleDelete = async () => {
     try {
       await deleteBill(bill.id);
-      onDelete(Number(bill.id));
+      onDelete?.(Number(bill.id));
     } catch (e) {
       console.error("Ошибка при удалении счёта:", e);
     }
   };
 
   return (
-    <div className={styles["item-bill"]}>
+    <div className={`${styles["item-bill"]} ${className || ""}`}>
       <div
         className={styles["background-logo"]}
         style={{ backgroundColor: bill.color }}
@@ -35,7 +37,7 @@ function BillCard({ bill, onDelete }: BillProps): JSX.Element {
       <span>{bill.title}</span>
       <span>{bill.type_bill?.name ?? "—"}</span>
       <span>{bill.amount}{bill.currency}</span>
-
+    {showMenu !== false && onDelete && (
       <Menu shadow="md" width={150} position="bottom-end">
         <Menu.Target>
           <ActionIcon variant="subtle">
@@ -54,6 +56,7 @@ function BillCard({ bill, onDelete }: BillProps): JSX.Element {
           </Menu.Item>
         </Menu.Dropdown>
       </Menu>
+    )}
     </div>
   );
 }
