@@ -23,7 +23,7 @@
 - 💅 CSS Modules + Mantine UI
 - 🔐 JWT авторизация
 - 📦 Axios для работы с API
-- 📁 RESTful Backend API (предположительно на Node.js/NestJS или аналогичном)
+- 📁 RESTful Backend API
 
 ## 🛠️ Установка и запуск
 
