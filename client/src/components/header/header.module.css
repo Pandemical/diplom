@@ -1,0 +1,110 @@
+
+
+.container{
+    width: 100%, 1920px;
+    display: flex;
+    margin: 0px 270px;
+    justify-content: space-between;
+    flex-grow: 1;
+}
+
+.header{
+    width: 1920px;
+    height: 90px;
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 20px 20px 50px;
+    align-items: center;
+
+    /*Закреп шапки*/
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    background: #ffffff;
+}
+
+.header-logo{
+    margin-top: 10px;
+}
+
+.menu-list ul{
+    display: flex;
+    list-style: none;
+}
+
+.menu-list a {
+    margin-right: 50px;
+    text-decoration: none;  
+    color: #7F8FA4;
+}
+
+.menu-list a:hover{
+    font-weight: bold;
+    color: #000000;
+}
+
+.header-right{
+    display: flex;
+    /* justify-content: right; */
+    /* align-items: center; */
+}
+
+.header-account{
+    margin-left: 35px;
+}
+
+.header-account img{
+    width: 50px;
+    height: 50px;
+}
+
+.header-notification{
+    width: 50px;
+    height: 50px;
+    border-radius: 25px;
+    background-color: #F5F7FA;
+    margin-left: 30px;
+}
+
+.header-notification img{
+    margin-top: 12.5px;
+    margin-left: 12.5px;
+}
+
+.header-settings{
+    width: 50px;
+    height: 50px;
+    border-radius: 25px;
+    background-color: #F5F7FA;
+    margin-left: 30px;
+}
+
+.header-settings img{
+    margin-top: 12.5px;
+    margin-left: 12.5px;
+}
+
+.menu{
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+
+.menu li a{
+    text-decoration: none;
+    color: #B1B1B1;
+}
+
+.dropdown {
+  position: absolute;
+  top: 100%;
+  background-color: white;
+  border: 1px solid #ccc;
+  padding: 8px 12px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  z-index: 1000;
+}

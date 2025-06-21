@@ -1,0 +1,31 @@
+.item-transaction {
+  padding: 20px;
+  display: grid;
+  grid-template-columns: auto 40px 1fr 1fr 1fr auto;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 20px;
+  background-color: #FFFFFF;
+  border-radius: 10px;
+}
+
+.background-category {
+  width: 35px;
+  height: 35px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+}
+
+.amountExpense {
+  color: #FE3B2C;
+  font-weight: bold;
+  text-align: right;
+}
+
+.amountIncome {
+  color: #21CB87;
+  font-weight: bold;
+  text-align: right;
+}
